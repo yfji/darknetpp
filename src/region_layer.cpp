@@ -461,7 +461,6 @@ void get_region_boxes(layer l, int w, int h, int netw, int neth, float thresh, f
 
 void forward_region_layer_gpu(const layer l, network net)
 {
-printf("forward region layer gpu\n");
     copy_gpu(l.batch*l.inputs, net.input_gpu, 1, l.output_gpu, 1);
     int b, n;
     for (b = 0; b < l.batch; ++b){
@@ -478,19 +477,15 @@ printf("forward region layer gpu\n");
             if(!l.softmax && !l.softmax_tree) activate_array_gpu(l.output_gpu + index, l.classes*l.w*l.h, LOGISTIC);
         }
     }
-printf("forward region layer gpu finish\n");
     if (l.softmax_tree){
         int index = entry_index(l, 0, 0, l.coords + 1);
-	printf("softmax tree index: %d\n", index);
         softmax_tree(net.input_gpu + index, l.w*l.h, l.batch*l.n, l.inputs/l.n, 1, l.output_gpu + index, *l.softmax_tree);
     } else if (l.softmax) {
         int index = entry_index(l, 0, 0, l.coords + !l.background);
-        printf("softmax index: %d\n", index);
         softmax_gpu(net.input_gpu + index, l.classes + l.background, l.batch*l.n, l.inputs/l.n, l.w*l.h, 1, l.w*l.h, 1, l.output_gpu + index);
     }
     if(!net.train || l.onlyforward){
         cuda_pull_array(l.output_gpu, l.output, l.batch*l.outputs);
-printf("cuda pull finish\n");
         return;
     }
 

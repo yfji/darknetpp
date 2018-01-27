@@ -41,7 +41,7 @@ CFLAGS += $(OPTS)
 ifeq ($(OPENCV), 1) 
 COMMON += -DOPENCV
 CFLAGS += -DOPENCV
-LDFLAGS += `pkg-config --libs opencv` 
+LDFLAGS += -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio
 COMMON += `pkg-config --cflags opencv` 
 endif
 
