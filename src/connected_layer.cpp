@@ -15,10 +15,10 @@ layer make_connected_layer(int batch, int inputs, int outputs, ACTIVATION activa
 {
     int i;
     layer l;
-    init_layer(l);
+    
     l.learning_rate_scale = 1;
     l.type = CONNECTED;
-
+    init_layer(l);
     l.inputs = inputs;
     l.outputs = outputs;
     l.batch=batch;

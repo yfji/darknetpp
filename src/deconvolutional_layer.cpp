@@ -20,9 +20,9 @@ layer make_deconvolutional_layer(int batch, int h, int w, int c, int n, int size
 {
     int i;
     layer l;
-    init_layer(l);
+    
     l.type = DECONVOLUTIONAL;
-
+    init_layer(l);
     l.h = h;
     l.w = w;
     l.c = c;

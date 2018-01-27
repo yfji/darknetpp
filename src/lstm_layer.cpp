@@ -31,9 +31,9 @@ layer make_lstm_layer(int batch, int inputs, int outputs, int steps, int batch_n
     fprintf(stderr, "LSTM Layer: %d inputs, %d outputs\n", inputs, outputs);
     batch = batch / steps;
     layer l;
-    init_layer(l);
     l.batch = batch;
     l.type = LSTM;
+    init_layer(l);  
     l.steps = steps;
     l.inputs = inputs;
 

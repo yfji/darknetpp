@@ -39,9 +39,9 @@ cost_layer make_cost_layer(int batch, int inputs, COST_TYPE cost_type, float sca
 {
     fprintf(stderr, "cost                                           %4d\n",  inputs);
     cost_layer l;
-    init_layer(l);
+    
     l.type = COST;
-
+    init_layer(l);
     l.scale = scale;
     l.batch = batch;
     l.inputs = inputs;

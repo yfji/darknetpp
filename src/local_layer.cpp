@@ -27,8 +27,8 @@ local_layer make_local_layer(int batch, int h, int w, int c, int n, int size, in
 {
     int i;
     local_layer l;
-    init_layer(l);
     l.type = LOCAL;
+    init_layer(l);
 
     l.h = h;
     l.w = w;

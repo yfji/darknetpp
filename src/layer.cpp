@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 void init_layer(layer& l){
-	if(l.type == DROPOUT){
+    if(l.type == DROPOUT){
         l.rand=nullptr;
 #ifdef GPU
        l.rand_gpu=nullptr;
@@ -51,6 +51,7 @@ void init_layer(layer& l){
     l.r_cpu=nullptr;
     l.h_cpu=nullptr;
     l.binary_input=nullptr;
+    l.softmax_tree=nullptr;
 
 #ifdef GPU
     l.indexes_gpu=nullptr;

@@ -7,8 +7,8 @@ layer make_normalization_layer(int batch, int w, int h, int c, int size, float a
 {
     fprintf(stderr, "Local Response Normalization Layer: %d x %d x %d image, %d size\n", w,h,c,size);
     layer l;
-    init_layer(l);
     l.type = NORMALIZATION;
+    init_layer(l);
     l.batch = batch;
     l.h = l.out_h = h;
     l.w = l.out_w = w;

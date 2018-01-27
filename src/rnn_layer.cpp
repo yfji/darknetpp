@@ -31,9 +31,9 @@ layer make_rnn_layer(int batch, int inputs, int outputs, int steps, ACTIVATION a
     fprintf(stderr, "RNN Layer: %d inputs, %d outputs\n", inputs, outputs);
     batch = batch / steps;
     layer l;
-    init_layer(l);
     l.batch = batch;
     l.type = RNN;
+    init_layer(l);
     l.steps = steps;
     l.inputs = inputs;
 

@@ -12,9 +12,9 @@
 layer make_activation_layer(int batch, int inputs, ACTIVATION activation)
 {
     layer l;
-    init_layer(l);
+    
     l.type = ACTIVE;
-
+    init_layer(l);
     l.inputs = inputs;
     l.outputs = inputs;
     l.batch=batch;

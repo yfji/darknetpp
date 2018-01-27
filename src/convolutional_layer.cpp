@@ -178,9 +178,9 @@ convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int
     int i;
     convolutional_layer l;
     
-    init_layer(l);
+    
     l.type = CONVOLUTIONAL;
-
+    init_layer(l);
     l.groups = groups;
     l.h = h;
     l.w = w;

@@ -14,9 +14,9 @@
 detection_layer make_detection_layer(int batch, int inputs, int n, int side, int classes, int coords, int rescore)
 {
     detection_layer l;
-    init_layer(l);
+    
     l.type = DETECTION;
-
+    init_layer(l);
     l.n = n;
     l.batch = batch;
     l.inputs = inputs;

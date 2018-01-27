@@ -575,8 +575,8 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
     image **alphabet = load_alphabet();
     network *net = load_network(cfgfile, weightfile, 0);
     printf("test_detector: %d,%d\n",net->layers[net->n-1].classes,net->layers[net->n-1].coords);
-    for(auto i=0;i<net->n;++i)
-		std::cout<<net->layers[i].batch<<std::endl;
+//  for(auto i=0;i<net->n;++i)
+//		std::cout<<net->layers[i].batch<<std::endl;
     set_batch_network(net, 1);
     srand(2222222);
     double time;

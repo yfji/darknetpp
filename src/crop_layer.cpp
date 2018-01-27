@@ -17,8 +17,9 @@ crop_layer make_crop_layer(int batch, int h, int w, int c, int crop_height, int 
 {
     fprintf(stderr, "Crop Layer: %d x %d -> %d x %d x %d image\n", h,w,crop_height,crop_width,c);
     crop_layer l;
-    init_layer(l);
+    
     l.type = CROP;
+    init_layer(l);
     l.batch = batch;
     l.h = h;
     l.w = w;

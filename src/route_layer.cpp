@@ -8,8 +8,8 @@ route_layer make_route_layer(int batch, int n, int *input_layers, int *input_siz
 {
     fprintf(stderr,"route ");
     route_layer l;
-    init_layer(l);
     l.type = ROUTE;
+    init_layer(l);
     l.batch = batch;
     l.n = n;
     l.input_layers = input_layers;
